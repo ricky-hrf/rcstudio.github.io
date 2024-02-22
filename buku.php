@@ -66,7 +66,7 @@ if (isset($_POST["cari"])) {
   <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style=" 
   background-color: #120b47;">
     <div class="container">
-      <a class="navbar-brand" href="#home"><span class="fw-bold">Rc</span>Studio</a>
+      <a class="navbar-brand" href="home.php"><span class="fw-bold">Rc</span>Studio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

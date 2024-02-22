@@ -93,17 +93,19 @@
       <div class="row justify-content-evenly">
         <div class="col-md-4 mb-3">
           <div class="card">
-            <a href="login.php">
+            <a href="buku.php" for="buku">
               <img src="asset/gambar/1.jpg" height="250" class="card-img-top" alt="project1">
             </a>
             <div class="card-body">
-              <p class="card-text text-center">Pemrograman Web</p>
+              <p class="card-text text-center" id="buku">Daftar Buku</p>
             </div>
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="asset/gambar/2.jpg" height="250" class="card-img-top" alt="project2">
+            <a href="machine.php">
+              <img src="asset/gambar/2.jpg" height="250" class="card-img-top" alt="project2">
+            </a>
             <div class="card-body">
               <p class="card-text text-center">Machine Learning</p>
             </div>
@@ -111,7 +113,9 @@
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="asset/gambar/5.jpg" height="250" class="card-img-top" alt="project3">
+            <a href="deep.php">
+              <img src="asset/gambar/5.jpg" height="250" class="card-img-top" alt="project3">
+            </a>
             <div class="card-body">
               <p class="card-text text-center">Deep Learning</p>
             </div>
@@ -119,7 +123,9 @@
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="asset/gambar/4.jpg" height="250" class="card-img-top" alt="project4">
+            <a href="jst.php">
+              <img src="asset/gambar/4.jpg" height="250" class="card-img-top" alt="project4">
+            </a>
             <div class="card-body">
               <p class="card-text text-center">Jaringan Syaraf Tiruan</p>
             </div>
@@ -127,7 +133,9 @@
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="asset/gambar/3.jpg" height="250" class="card-img-top" alt="project5">
+            <a href="mobile.php">
+              <img src="asset/gambar/3.jpg" height="250" class="card-img-top" alt="project5">
+            </a>
             <div class="card-body">
               <p class="card-text text-center">Pemrograman mobile</p>
             </div>

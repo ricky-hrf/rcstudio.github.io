@@ -48,6 +48,7 @@ function tambah($data)
   return mysqli_affected_rows($conn);
 }
 
+
 function upload()
 {
   $namaFile = $_FILES['cover']['name'];

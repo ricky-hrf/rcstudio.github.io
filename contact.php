@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+  header("location: login.php");
+  exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +28,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style=" 
   background-color: #120b47;">
     <div class="container">
-      <a class="navbar-brand" href="index.php"><span class="fw-bold">Rc</span>Studio</a>
+      <a class="navbar-brand" href="home.php"><span class="fw-bold">Rc</span>Studio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,8 +40,17 @@
           <li class="nav-item">
             <a class="nav-link" href="about.php">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Project
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="buku.php">Daftar Buku</a></li>
+              <li><a class="dropdown-item" href="#project">Machine Learning</a></li>
+              <li><a class="dropdown-item" href="#project">Deep Learning</a></li>
+              <li><a class="dropdown-item" href="#project">Jaringan Syaraf Tiruan</a></li>
+              <li><a class="dropdown-item" href="#project">Pemrograman Mobile</a></li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -62,7 +81,7 @@
               <label for="pesan" class="form-label">Pesan</label>
               <textarea class="form-control" id="pesan" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Kirim</button>
+            <button type="submit" class="btn btn-primary" name="submit">Kirim</button>
           </form>
         </div>
       </div>
