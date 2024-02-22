@@ -160,20 +160,29 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form>
+          <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+            <strong>Terimakasih!</strong> pesan anda telah kami terima.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <form name="rcstudio-contact-form">
             <div class="mb-3">
               <label for="name" class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" id="name">
+              <input type="text" class="form-control" id="name" name="nama">
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="email">
+              <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
             </div>
             <div class="mb-3">
               <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" rows="3"></textarea>
+              <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Kirim</button>
+            <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+
+            <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
           </form>
         </div>
       </div>
@@ -191,6 +200,38 @@
   <!-- akhir footer -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby3XrsmwPmxqV166SoRP2f3wnY_p9GM6Y_sFIQ9NfdJ-g2HITZsg3USVSwJxWiyv3dn/exec'
+    const form = document.forms['rcstudio-contact-form']
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnLoading = document.querySelector('.btn-loading');
+    const alert = document.querySelector('.my-alert');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      //menampilkan tombol loading, hilangkan tombol kirim
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+
+      fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form)
+        })
+        .then(response => {
+          //menampilkan tombol kirim, hilangkan tombol loading
+          btnLoading.classList.toggle('d-none');
+          btnKirim.classList.toggle('d-none');
+          //tampilkan alert
+          alert.classList.toggle('d-none');
+          //hilangkan form
+          form.reset();
+          console.log('Success!', response)
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 </body>
 
 </html>
