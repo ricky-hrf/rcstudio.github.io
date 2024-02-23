@@ -7,20 +7,6 @@ if (!isset($_SESSION["login"])) {
 }
 require 'functions.php';
 
-//pagination
-//konfigurasi
-$jumlahDataPerHalaman = 20;
-$jumlahData = count(query("SELECT * FROM buku"));
-$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
-$halamanAktif = (isset($_GET["page"])) ? $_GET["page"] : 1;
-$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-
-$buku = query("SELECT * FROM buku ORDER BY id DESC LIMIT $awalData, $jumlahDataPerHalaman");
-
-if (isset($_POST["cari"])) {
-  $buku = cari($_POST["keyword"]);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -36,24 +22,12 @@ if (isset($_POST["cari"])) {
   <link rel="stylesheet" href="css/style.css">
   <!-- icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-1+jQxaUgOp9J1dB23drUZm8Gr6blzplb1uYXPxk0dp5hW26RzgI9bp+YrtyOh23INuvdWJ7I5yAcYbMxYX4b1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .loader {
-      width: 100px;
-      position: absolute;
-      top: 128px;
-      z-index: -1;
-      display: none;
-    }
 
-    @media print {
+  <!-- Design fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
-      .logout,
-      .tambah,
-      .cari {
-        display: none;
-      }
-    }
-  </style>
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FsCj2S6PvI2wT3gMz1AmvRc5V8VFvReyrar/mORb5PGF7Ji7o2A56LhN5hP3+7Tw2u2ljZTSd0BqXN7e5/8r1Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="asset/style/jquery-3.7.1.min.js"></script>
   <script src="asset/style/script.js"></script>
@@ -93,6 +67,9 @@ if (isset($_POST["cari"])) {
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
+          <li class="nav-item">
+            <a href="#" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -104,9 +81,30 @@ if (isset($_POST["cari"])) {
       <=Keluar </a>
 
   </section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Project 1</h2>
+        <img src="https://via.placeholder.com/300" alt="Project 1" class="img-fluid">
+        <p>Description of Project 1</p>
+      </div>
+      <div class="col-md-4">
+        <h2>Project 2</h2>
+        <img src="https://via.placeholder.com/300" alt="Project 2" class="img-fluid">
+        <p>Description of Project 2</p>
+      </div>
+      <div class="col-md-4">
+        <h2>Project 3</h2>
+        <img src="https://via.placeholder.com/300" alt="Project 3" class="img-fluid">
+        <p>Description of Project 3</p>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-Kfk2opopL3KJ6I+MZZOdXgI6/BBe8hSv2gWPSc6FmND13lMR0wknLo6a8Qq6pVX+fNCerffHhTR4PUbQG5Vl+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
