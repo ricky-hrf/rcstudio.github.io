@@ -64,6 +64,8 @@ if (isset($_POST["register"])) {
             </div>
             <button type="submit" name="register" class="btn btn-dark" style="background-color: #120b47;">Register</button>
           </form>
+          <a class="dropdown-item fw-bold mt-auto" href="login.php">Login!</a>
+
         </div>
       </div>
     </div>

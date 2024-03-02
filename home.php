@@ -22,6 +22,7 @@ require 'functions.php';
   <link rel="stylesheet" href="css/style.css">
   <!-- icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-1+jQxaUgOp9J1dB23drUZm8Gr6blzplb1uYXPxk0dp5hW26RzgI9bp+YrtyOh23INuvdWJ7I5yAcYbMxYX4b1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
   <!-- Design fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -67,10 +68,12 @@ require 'functions.php';
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i></a>
+          <li class="nav-item ml-4">
           </li>
         </ul>
+      </div>
+      <div class="keluar">
+        <a href="#" class="btn btn-primary"><i class="bi bi-box-arrow-left"></i></a>
       </div>
     </div>
   </nav>
